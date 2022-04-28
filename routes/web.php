@@ -22,3 +22,6 @@ Route::get("getcont",[TestController::class,'getcont']);
 Route::post("addcont",[TestController::class,'addTest']);
 Route::put("updatecont",[TestController::class,'updateTest']);
 Route::delete("deletecont/{id}",[TestController::class,'deleteTest']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

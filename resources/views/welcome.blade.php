@@ -8,7 +8,7 @@
 
   <title>Laravel</title>
 
-  <!-- <script type="text/javascript" src="{{asset('asset/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}"></script> -->
+ {{-- <script type="text/javascript" src="{{asset('asset/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css')}}"></script> --}}
 
 
   <!-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"> -->
@@ -16,59 +16,27 @@
 </head>
 
 <body class="container">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-    </div>
-  <div>
-  </nav>
 
     <div id="body">
       <p class=" overflow-hidden mt-2">
-        <button class="btn btn-outline-primary" @click="open=true;edit=false;Tests={title:'',body:''}">Add</button>
+        <button class="btn btn-outline-primary" v-on:click="open=true;edit=false;Tests={title:'',body:''}">Add</button>
       </p>
       <div class="border border-danger" v-if="open">
         <div class="m-5">
           <div class="form-group mt-2">
-            <lable>Title</lable>
-            <input type="text" name="title" v-validate="'required'" id="title" class="form-control border border-dark" placeholder="title" v-model='Tests.title'  >
-            <span v-show="errors.has('title')">jhjh</span>
+            <label>Title</label>
+            <input type="text" name="title"  id="title" class="form-control border border-dark" placeholder="title" v-model='Tests.title'  >
+            {{-- <span v-show="errors.has('title')">jhjh</span> --}}
           </div>
           <div class="form-group mt-2">
-            <lable>body</lable>
+            <label>body</label>
             <textarea name="body" id="bodyf" class="form-control border border-dark" placeholder="body" v-model='Tests.body' required></textarea>
           </div>
           <div class="mt-2 " dir="rtl">
 
-            <input type="submit" v-if='edit' name="" id="" class="btn btn-info " @click="updateTest" value="Edite">
-            <input type="submit" v-else name="" id="" class="btn btn-primary " @click="addtest" value="Add">
-            <input type="button" name="" id="" class="btn btn-secondary " @click="open=false" value="close">
+            <input type="submit" v-if='edit' name="" id="" class="btn btn-info " v-on:click="updateTest" value="Edite">
+            <input type="submit" v-else name="" id="" class="btn btn-primary " v-on:click="addtest" value="Add">
+            <input type="button" name="" id="" class="btn btn-secondary " v-on:click="open=false" value="close">
           </div>
         </div>
       </div>
@@ -79,8 +47,8 @@
               <h5 class="card-title"> @{{item.title}}</h5>
               <p class="card-text "> @{{item.body}}</p>
               <span class="float-right">🕓{{date("Y-m-d")}}</span>
-              <input type="submit" href="#" class="btn btn-danger" @click='deletTest(item)' value="🗑">
-              <btntun href="#" class="btn btn-success " @click='editTest(item)'>📝</btntun>
+              <input type="submit" href="#" class="btn btn-danger" v-on:click='deletTest(item)' value="🗑">
+              <button href="#" class="btn btn-success " v-on:click='editTest(item)'>📝</button>
             </div>
           </div>
         </div>
