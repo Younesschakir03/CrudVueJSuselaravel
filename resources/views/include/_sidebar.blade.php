@@ -13,28 +13,28 @@
         <ul class="nav ">
           <li class="nav-item nav-category">Main</li>
           <li class="nav-item">
-            <a href="{{ url('home')}}" class="nav-link text-light">
+            <a href="{{ url('home')}}" class="nav-link ">
               <i class="link-icon" data-feather="box"></i>
               <span class="link-title">الرئيسية</span>
             </a>
           </li>
           <li class="nav-item nav-category">Posts</li> 
           <li class="nav-item ">
-            <a class="nav-link  text-light" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
+            <a class="nav-link  " data-bs-toggle="collapse" href="#post" role="button" aria-expanded="false" aria-controls="emails">
               <i class="link-icon" data-feather="file-text"></i>
               <span class="link-title ">منشور</span>
               <i class="link-arrow" data-feather="chevron-down"></i>
             </a>
-            <div class="collapse" id="emails">
+            <div class="collapse" id="post">
               <ul class="nav sub-menu">
                 <li class="nav-item">
-                  <a href="pages/email/inbox.html" class="nav-link text-light">Inbox</a>
+                  <a href="{{ url('/')}}" class="nav-link ">عرض المنشورات</a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/email/read.html" class="nav-link text-light">Read</a>
+                  <a href="pages/email/read.html" class="nav-link ">Read</a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/email/compose.html" class="nav-link text-light">Compose</a>
+                  <a href="pages/email/compose.html" class="nav-link ">Compose</a>
                 </li>
               </ul>
             </div>

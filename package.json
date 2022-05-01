@@ -22,5 +22,10 @@
         "vue": "^2.6.12",
         "vue-loader": "^15.9.8",
         "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "@sweetalert2/theme-dark": "^5.0.10",
+        "laravel-vue-pagination": "^3.0.0",
+        "sweetalert2": "^11.4.9"
     }
 }
