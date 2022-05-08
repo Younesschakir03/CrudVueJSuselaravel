@@ -30,5 +30,4 @@ Route::group([
     Route::post('/refresh', [AuthController::class, 'refresh']);
     Route::get('/user-profile', [AuthController::class, 'userProfile']);
 });
-Route::resource('/post', PostController::class);
-// Route::post('/auth/token', 'Auth\LoginController@auth');
+Route::resource('/post', PostController::class)->middleware('auth');

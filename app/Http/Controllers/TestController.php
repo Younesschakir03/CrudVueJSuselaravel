@@ -35,9 +35,7 @@ class TestController extends Controller
         $test->title = $req->title;
         $test->body = $req->body;
         $test->save();
-
         return Response()->json(['etat' => true, 'id' => $test->id]);
-        // return $test->id;
     }
     public function updateTest(Request $req)
     {
